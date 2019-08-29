@@ -1,3 +1,8 @@
+### `Useful Links`
+https://github.com/volkov97/react-compound-timer
+https://reactjs.org/docs/hello-world.html
+https://reactjs.org/docs/create-a-new-react-app.html
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts
