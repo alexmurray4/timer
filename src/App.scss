@@ -58,7 +58,7 @@ code {
   font-family: 'Orbitron', sans-serif;
   color: #fff;
   font-size: 35px;
-  margin: 20px 0;
+  margin: 20px 0 15px;
   div {
     display: inline-block;
   }
@@ -68,14 +68,14 @@ code {
   display: flex;
   align-items: center;
   justify-content: center;
-  margin-top: -15px;
+  margin-top: -20px;
   .timepower {
-    font-size: 1.8em;
+    font-size: 1.7em;
     color: #fff;
     margin: 0 10px;
   }
   .timeup, .timedown {
-    font-size: 1em;
+    font-size: 0.9em;
     color: #fff;
   }
 }
@@ -88,4 +88,5 @@ code {
   color: #fff;
   text-align: center;
   font-size: 16px;
+  width: 140px;
 }
