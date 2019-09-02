@@ -118,3 +118,31 @@ $hamburger-spacing:8px;
         height: auto;
     }
 }
+
+.timer {
+    position: relative;
+    width: 250px;
+    height: 250px;
+    display: inline-block;
+    .t-circle {
+        background-color: #d6e6ef;
+        width: 230px;
+        height: 230px;
+        border-radius: 50%;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate3d(-50%, -50%, 0);
+    }
+    .t-circle-inner {
+        background-color: #0778a5;
+        width: 200px;
+        height: 200px;
+        border-radius: 50%;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate3d(-50%, -50%, 0);
+        border: 8px solid darken(#0778a5, 20%);
+    }
+}
