@@ -1,6 +1,7 @@
 import React, {Component} from 'react';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faCoffee } from '@fortawesome/free-solid-svg-icons';
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faPlusCircle } from "@fortawesome/free-solid-svg-icons";
+
 import './Controls.scss';
 
 function newClock(e) {
@@ -19,7 +20,7 @@ class Controls extends Component {
 				    <span class="hamburger hamburger-2"></span>
 				    <span class="hamburger hamburger-3"></span>
 				  </label>
-				  <a href="#" class="menu-item" onClick={newClock}> <FontAwesomeIcon icon="coffee" /> </a>
+				  <a href="#" class="menu-item" onClick={newClock}> <FontAwesomeIcon icon={faPlusCircle} /> </a>
 				</nav>
 				<svg xmlns="http://www.w3.org/2000/svg" version="1.1">
 				    <defs>
