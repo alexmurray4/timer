@@ -7,6 +7,19 @@ import { faPowerOff } from "@fortawesome/free-solid-svg-icons";
 
 
 class Clock extends Component {
+	constructor(props) {
+	    super(props);
+		this.toggle = this.toggle.bind(this);
+	    this.state = {
+	        isRunning: false,
+	    };
+	  }
+	  toggle() {
+		    this.setState({
+		        isRunning: !this.state.isRunning,
+		    });
+		}
+
 	render() {
 		return (
 			<div className="timer">
@@ -15,7 +28,7 @@ class Clock extends Component {
 						<Timer
 						initialTime={0}
 						startImmediately={false}
-				    onStart={() =>
+				    	onStart={() =>
 							console.log('onStart hook')
 						}
 						onStop={() =>
@@ -28,14 +41,14 @@ class Clock extends Component {
 										<a href="#" className="timedown">
 											<FontAwesomeIcon icon={faMinusSquare} />
 										</a>
-										<a href="#" className="timepower" onClick={start}>
+										<a href="#" className="timepower" onClick={start} isRunning={this.state.isRunning}>
 											<FontAwesomeIcon icon={faPowerOff} />
 										</a>
 										<a href="#" className="timeup">
 											<FontAwesomeIcon icon={faPlusSquare} />
 										</a>
 									</div>
-									{/*<div>{getTimerState()}</div>*/}
+									<div>{getTimerState()}</div>
 									<div className="time-info">
 										<div className="hours"><Timer.Hours /></div>
 										<span>:</span>
