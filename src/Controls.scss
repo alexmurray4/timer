@@ -151,6 +151,20 @@ $hamburger-spacing:8px;
     }
 }
 
+.menu-item {
+  background-color: #00d401;
+  &:hover {
+    color: #00d401;
+  }
+}
+
+.reset-clocks {
+  background-color: #d43500;
+  &:hover {
+    color: #d43500;
+  }
+}
+
 ::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
   color: white;
   opacity: 1; /* Firefox */

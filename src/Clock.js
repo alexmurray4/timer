@@ -6,9 +6,6 @@ import { faMinusSquare } from "@fortawesome/free-solid-svg-icons";
 import { faPowerOff } from "@fortawesome/free-solid-svg-icons";
 
 function buttonLink(start, stop, state){
-	console.log('here');
-	console.log(state);
-
 	const isRunning = state.isRunning;
 	if (state == 'INITED' || state == 'STOPPED') {
 		return <a href="# " className="timepower" onClick={start}>
@@ -21,9 +18,13 @@ function buttonLink(start, stop, state){
 	}
 }
 
+function timeUp() {
+	console.log(<Timer.Minutes />);
+}
+
 class Clock extends Component {
 	constructor(props) {
-	    super(props);
+	  super(props);
 		this.state = {isRunning: false};
 	}
 
@@ -49,11 +50,10 @@ class Clock extends Component {
 											<FontAwesomeIcon icon={faMinusSquare} />
 										</a>
 										{buttonLink(start, stop, getTimerState())}
-										<a href="# " className="timeup">
+										<a href="# " className="timeup" onClick={timeUp}>
 											<FontAwesomeIcon icon={faPlusSquare} />
 										</a>
 									</div>
-									<div>{getTimerState()}</div>
 									<div className="time-info">
 										<div className="hours"><Timer.Hours /></div>
 										<span>:</span>

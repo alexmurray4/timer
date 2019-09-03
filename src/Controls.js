@@ -1,6 +1,7 @@
 import React, {Component} from 'react';
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faPlusCircle } from "@fortawesome/free-solid-svg-icons";
+import { faRedoAlt } from "@fortawesome/free-solid-svg-icons";
 import Clock from './Clock.js';
 
 import './Controls.scss';
@@ -11,19 +12,21 @@ function newClock(e) {
 }
 
 class Controls extends Component {
-    constructor() {
-        super();
-        this.state = {
-          clicked: false
-        };
-        this.handleClick = this.handleClick.bind(this);
-    }
-
-    handleClick() {
-        this.setState({
-          clicked: true
-        });
-    }
+  constructor() {
+    super();
+    this.state = {
+      clicked: false
+    };
+    this.handleClick = this.handleClick.bind(this);
+  }
+  handleClick() {
+    this.setState({
+      clicked: true
+    });
+  }
+  resetClocks() {
+    console.log('resetting');
+  }
 	render() {
 		return (
 			<div className="controls">
@@ -34,8 +37,9 @@ class Controls extends Component {
 				    <span class="hamburger hamburger-2"></span>
 				    <span class="hamburger hamburger-3"></span>
 				  </label>
+          <a href="#" class="menu-item reset-clocks" onClick={this.resetClocks}> <FontAwesomeIcon icon={faRedoAlt} /> </a>
 				  <a href="#" class="menu-item" onClick={this.handleClick}> <FontAwesomeIcon icon={faPlusCircle} /> </a>
-                  {this.state.clicked ? <Clock /> : null}
+          {this.state.clicked ? <Clock /> : null}
 				</nav>
 				<svg xmlns="http://www.w3.org/2000/svg" version="1.1">
 				    <defs>
