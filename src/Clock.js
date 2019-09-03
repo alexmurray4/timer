@@ -5,20 +5,27 @@ import { faPlusSquare } from "@fortawesome/free-solid-svg-icons";
 import { faMinusSquare } from "@fortawesome/free-solid-svg-icons";
 import { faPowerOff } from "@fortawesome/free-solid-svg-icons";
 
+function buttonLink(start, stop, state){
+	console.log('here');
+	console.log(state);
+
+	const isRunning = state.isRunning;
+	if (state == 'INITED' || state == 'STOPPED') {
+		return <a href="# " className="timepower" onClick={start}>
+			<FontAwesomeIcon icon={faPowerOff} />
+		</a>;
+	} else {
+		return <a href="# " className="timepower" onClick={stop}>
+			<FontAwesomeIcon icon={faPowerOff} />
+		</a>;
+	}
+}
 
 class Clock extends Component {
 	constructor(props) {
 	    super(props);
-		this.toggle = this.toggle.bind(this);
-	    this.state = {
-	        isRunning: false,
-	    };
-	  }
-	  toggle() {
-		    this.setState({
-		        isRunning: !this.state.isRunning,
-		    });
-		}
+		this.state = {isRunning: false};
+	}
 
 	render() {
 		return (
@@ -29,22 +36,20 @@ class Clock extends Component {
 						initialTime={0}
 						startImmediately={false}
 				    	onStart={() =>
-							console.log('onStart hook')
+							this.setState({isRunning: true})
 						}
 						onStop={() =>
-							console.log('onStop hook')
+							this.setState({isRunning: false})
 						}
 							>
 							{({ start, resume, pause, stop, reset, getTimerState }) => (
 								<React.Fragment>
 									<div className="time-controls">
-										<a href="#" className="timedown">
+										<a href="# " className="timedown">
 											<FontAwesomeIcon icon={faMinusSquare} />
 										</a>
-										<a href="#" className="timepower" onClick={start} isRunning={this.state.isRunning}>
-											<FontAwesomeIcon icon={faPowerOff} />
-										</a>
-										<a href="#" className="timeup">
+										{buttonLink(start, stop, getTimerState())}
+										<a href="# " className="timeup">
 											<FontAwesomeIcon icon={faPlusSquare} />
 										</a>
 									</div>
