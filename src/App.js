@@ -1,12 +1,10 @@
 import React from 'react';
-import Clock from './Clock.js';
-import Controls from './Controls.js';
+import Timers from './Timers.js';
 
 function App() {
   return (
     <div className="App">
-        <Clock />
-        <Controls />
+        <Timers />
     </div>
   );
 }

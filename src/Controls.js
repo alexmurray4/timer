@@ -37,9 +37,8 @@ class Controls extends Component {
 				    <span class="hamburger hamburger-2"></span>
 				    <span class="hamburger hamburger-3"></span>
 				  </label>
-          <a href="#" class="menu-item reset-clocks" onClick={this.resetClocks}> <FontAwesomeIcon icon={faRedoAlt} /> </a>
+                  <a href="#" class="menu-item reset-clocks" onClick={this.resetClocks}> <FontAwesomeIcon icon={faRedoAlt} /> </a>
 				  <a href="#" class="menu-item" onClick={this.handleClick}> <FontAwesomeIcon icon={faPlusCircle} /> </a>
-          {this.state.clicked ? <Clock /> : null}
 				</nav>
 				<svg xmlns="http://www.w3.org/2000/svg" version="1.1">
 				    <defs>
